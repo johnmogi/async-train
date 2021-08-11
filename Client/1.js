@@ -1,4 +1,15 @@
 const URL = 'http://localhost:3000/api/contacts';
+const buildData = document.getElementById('buildData');
+
+
+{/* <tr>
+<th scope="row" class="leadID"></th>
+<td class="leadName"></td>
+<td class="leadMail" ></td>
+<td class="leadPhone"></td>
+</tr> */}
+
+
 const contactContainer = []; 
 async function fetchContactsJSON() {
     const response = await fetch(URL);
@@ -7,11 +18,26 @@ async function fetchContactsJSON() {
   }
   
   fetchContactsJSON().then(contacts => {
-    contactContainer.push(contacts);
+    draw(contacts);
   }).catch(error => {
     document.write('error' + error);
     
   });
-  console.log(contactContainer);
+
+  
+  // draw dunction
+  
+  async function draw(contacts){
+    
+    contacts.forEach(el => {
+      
+      console.log(el);
+
+    });
+
+
+}
+
+
 
   
